@@ -10,17 +10,36 @@ class Actor:
 
     Attributes:
         _tag (string): The actor's tag.
+        _description (string): The artifacts description.
         _text (string): The textual representation of the actor.
         _position (Point): The actor's position in 2d space.
         _velocity (Point): The actor's speed and direction.
     """
 
     def __init__(self):
-        """The class constructor."""
+        """The class constructor.
+        
+        Attributes:
+            _tag (string): The actor's tag.
+            _description (string): The artifacts description.
+            _text (string): The textual representation of the actor.
+            _position (Point): The actor's position in 2d space.
+            _velocity (Point): The actor's speed and direction.
+        """
+        self._tag = ""
         self._description = ""
         self._text = ""
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
+
+
+    def get_tag(self):
+        """Gets the actors tag.
+        
+        Returns:
+            string: The actors tag.
+        """
+        return self._tag
 
     def get_description(self):
         """Gets the artifact's description.
@@ -53,6 +72,14 @@ class Actor:
             Point: The actor's speed and direction.
         """
         return self._velocity
+
+    def set_tag(self, tag):
+        """Updates the actor's tag to the given one.
+        
+        Args:
+            tag (string): The given tag.
+        """
+        self._tag = tag
     
     def set_description(self, description):
         """Updates the actor's description to the given one.
